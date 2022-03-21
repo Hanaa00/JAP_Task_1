@@ -5,9 +5,9 @@
             <h2 class="mt-5"><span style="color:green">Welcome to</span></h2>
             <h1 class="mt-10"><span style="color:green">Tasty</span></h1>
 
-          <nav class="navbar navbar-dark fixed-top bg-dark" *ngIf="accountService.currentUser$ | async">
+          <nav class="navbar navbar-dark fixed-top bg-dark" *ngIf="(accountService.currentUser$ | async) as user">
                 <div class="dropdown" dropdown>
-                    <a class="dropdown-toggle text-light" dropdownToggle>Hi, user!</a>
+                    <a class="dropdown-toggle text-light" dropdownToggle>Hi, {{user.username}}!</a>
                     <div class="dropdown-menu mt-3" *dropdownMenu>
                         <a class="dropdown-item">My profile</a>
                         <div class="dropdown-divider"></div>
