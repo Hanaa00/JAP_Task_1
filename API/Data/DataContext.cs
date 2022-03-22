@@ -5,6 +5,9 @@ namespace API.Data
 {
     public class DataContext : DbContext
     {
+        protected override void OnModelCreating(ModelBuilder modelBuilder){
+            modelBuilder.Entity<RecipeDetails>().HasNoKey();
+        }
         public DataContext(DbContextOptions options) : base(options)
         {
         }

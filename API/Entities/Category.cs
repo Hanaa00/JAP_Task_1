@@ -10,12 +10,7 @@ namespace API.Entities{
 
         public byte[] CategoryPhoto {get;set;}
 
-        public List<Recipe> Recipes {get;set;}
-
-
-
-
-
+      
 
     }
 }
