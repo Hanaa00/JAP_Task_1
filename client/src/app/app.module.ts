@@ -16,7 +16,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
-import { LoginComponent } from './login/login.component'; 
+import { LoginComponent } from './login/login.component';
+import { MembersComponent } from './members/members.component';
+import { MemberListComponent } from './members/member-list/member-list.component'; 
 
 
 
@@ -31,7 +33,9 @@ import { LoginComponent } from './login/login.component';
     CategoryDetailComponent,
     ListsComponent,
     MessagesComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    MembersComponent,
+    MemberListComponent
 
   ],
   imports: [

@@ -1,5 +1,5 @@
 export interface Category{
-   CategoryId:number,
+   CategoryId:number;
     CategoryName:string;
     CategoryPhoto:string;
 }

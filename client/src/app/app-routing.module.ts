@@ -16,7 +16,7 @@ const routes: Routes = [
     runGuardsAndResolvers:'always',
     canActivate:[AuthGuard],
     children:[
-      {path:'categories',component:CategoriesComponent,canActivate:[AuthGuard]},
+      {path:'categories',component:CategoriesComponent},
       {path:'categories/:id',component:CategoriesComponent},
       {path:'lists',component:ListsComponent},
       {path:'messages',component:MessagesComponent},
