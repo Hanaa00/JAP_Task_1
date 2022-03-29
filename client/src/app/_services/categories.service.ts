@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import {Category} from '../_models/category';
+import { Category }  from '../_models/category';
 
 
 
@@ -13,12 +13,15 @@ export class CategoriesService {
 
   constructor(private http:HttpClient) { }
 
-  getCategories(){
-    return this.http.get<Category[]>(this.baseUrl+'categories');
+  getCategories()
+  {
+    return this.http.get<Category[]>(this.baseUrl + 'categories');
   }
 
-  getCategory(CategoryName:string){
-    return this.http.get<Category>(this.baseUrl+'categories/'+CategoryName);
+  getCategory(categoryId:number)
+  {
+    return this.http.get<Category>(this.baseUrl + 'categories/'+ categoryId);
 
   }
 }
+

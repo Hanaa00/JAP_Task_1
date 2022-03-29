@@ -13,13 +13,16 @@ import { CategoryListComponent } from './categories/category-list/category-list.
 import { CategoryDetailComponent } from './categories/category-detail/category-detail.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { CategoriesComponent } from './categories/categories.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { LoginComponent } from './login/login.component';
 import { MembersComponent } from './members/members.component';
-import { MemberListComponent } from './members/member-list/member-list.component'; 
-
+import { MemberListComponent } from './members/member-list/member-list.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
+import { CategoryCardComponent } from './categories/category-card/category-card.component';
+import { RecipesComponent } from './recipes/recipes.component'; 
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { RecipeCardComponent } from './recipes/recipe-card/recipe-card.component';
 
 
 
@@ -33,9 +36,12 @@ import { MemberListComponent } from './members/member-list/member-list.component
     CategoryDetailComponent,
     ListsComponent,
     MessagesComponent,
-    CategoriesComponent,
     MembersComponent,
-    MemberListComponent
+    MemberListComponent,
+    MemberCardComponent,
+    CategoryCardComponent,
+    RecipesComponent,
+    RecipeCardComponent 
 
   ],
   imports: [

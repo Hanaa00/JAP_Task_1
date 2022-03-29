@@ -1,5 +1,8 @@
+import { Photo } from './photo';
+
 export interface Category{
-   CategoryId:number;
-    CategoryName:string;
-    CategoryPhoto:string;
+   categoryId:number;
+   categoryName:string;
+   categoryPhoto:string;
+   photos: Photo[];
 }
