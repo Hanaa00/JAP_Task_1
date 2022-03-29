@@ -2,8 +2,8 @@
     <div class="container">
         <!--*ngIf="accountService.currentUser$ | async">-->
         <main class="form-signin">
-            <h2 class="mt-5"><span style="color:green">Welcome to</span></h2>
-            <h1 class="mt-10"><span style="color:green">Tasty</span></h1>
+            <!-- <h2 class="mt-5"><span style="color:green">Welcome to</span></h2> -->
+            <h1 class="mt-5"><span style="color:green">Tasty</span></h1>
 
           <nav class="navbar navbar-dark fixed-top bg-dark" *ngIf="(accountService.currentUser$ | async) as user">
                 <div class="dropdown" dropdown>
@@ -28,8 +28,9 @@
                         placeholder="Please enter your password">
                     <br>
                     <input name="remember" type="checkbox"> Remember me
+                    <br>
                     <span class="psw">
-                        <a href="#">Don't have an account?</a>
+                        <a href="#">Forgot your password?</a>
                     </span>
                     <br>
                     <br>

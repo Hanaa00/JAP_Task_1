@@ -1,6 +1,6 @@
 <body class="text-center" *ngIf="(accountService.currentUser$ | async) === null">
     <div>
-        <label>Don't have an account? <label (click)="registerToggle()">Sign up</label>
+        <label>Don't have an account?  <label (click)="registerToggle()"><a href="#">Sign up</a></label>
         </label>
     </div>
     <div *ngIf="registerMode" class="container">

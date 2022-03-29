@@ -22,7 +22,8 @@ const routes: Routes = [
       {path:'categories',component:CategoryListComponent,canActivate:[AuthGuard]},
       {path:'recipes',component:RecipesComponent},
       {path:'categories/:id',component:CategoryDetailComponent},
-      {path: 'categories/:id', component:RecipeCardComponent},
+      {path:'recipes/getrecipebycategory/:id',component:CategoryDetailComponent},
+      //{path:'categories/:id', component:RecipeCardComponent},
       {path:'lists',component:ListsComponent},
       {path:'messages',component:MessagesComponent},
     ]

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
+
     public class RecipesController : BaseApiController
     {
         private readonly DataContext _context;
@@ -28,14 +29,20 @@ namespace API.Controllers
         }
 
         [HttpGet]
-
-        public async Task<IList<Recipe>> GetRecipeById(int id)
-        {
-            var list = _context.Recipe.Where(x=> x.CategoryId==id).ToListAsync();
-            return await list;
-
-
+        [Route ("getrecipebycategory/{categoryId}")]
+        public async Task<List<Recipe>> GetRecipeByCategory(int categoryId) {
+              return await _context.Recipe.Where(u => u.CategoryId == categoryId).ToListAsync();
         }
+        // public async Task<List<Recipe>> (int id)
+        // {
+        //     // //var list = await _context.Recipe.Where(x=> x.CategoryId == id);
+        //     // var list = _context.Recipe.Where(x=>x.CategoryId == id);
+        //     // var items = await list.ToListAsync<Recipe>;
+        //     // // var items = list.MapTo
+        //     // return Ok(items);
+        //     return await _context.Recipe.Where(x=> x.CategoryId == id).ToListAsync();
+
+        // }
 
 
 
