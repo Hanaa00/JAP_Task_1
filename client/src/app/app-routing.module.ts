@@ -9,6 +9,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { RecipeCardComponent } from './recipes/recipe-card/recipe-card.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,13 @@ const routes: Routes = [
       {path:'categories',component:CategoryListComponent,canActivate:[AuthGuard]},
       {path:'recipes',component:RecipesComponent},
       {path:'categories/:id',component:CategoryDetailComponent},
-      {path:'recipes/getrecipebycategory/:id',component:CategoryDetailComponent},
+      {path:'recipes/:categoryId',component:CategoryDetailComponent},
+      {path:'recipes/:id',component:CategoryDetailComponent},
+      {path:'recipes/edit/:id',component:CategoryDetailComponent},
+      {path:'recipes/add',component:CategoryDetailComponent},
+      {path:'recipes/:categoryId/:recipeId',component:IngredientsComponent},
+      
+
       //{path:'categories/:id', component:RecipeCardComponent},
       {path:'lists',component:ListsComponent},
       {path:'messages',component:MessagesComponent},

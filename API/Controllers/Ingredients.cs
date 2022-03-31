@@ -2,15 +2,18 @@ using API.Data;
 
 namespace API.Controllers
 {
-    public class RecipeDetails : BaseApiController
+    public class Ingredients : BaseApiController
     {
         private readonly DataContext _context;
-        public RecipeDetails(DataContext context)
+        public Ingredients(DataContext context)
         {
             _context = context;
-
         }
 
+       
         
+
+
+
     }
 }

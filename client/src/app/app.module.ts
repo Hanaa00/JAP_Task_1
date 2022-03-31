@@ -23,6 +23,7 @@ import { CategoryCardComponent } from './categories/category-card/category-card.
 import { RecipesComponent } from './recipes/recipes.component'; 
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { RecipeCardComponent } from './recipes/recipe-card/recipe-card.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 
 
@@ -41,7 +42,8 @@ import { RecipeCardComponent } from './recipes/recipe-card/recipe-card.component
     MemberCardComponent,
     CategoryCardComponent,
     RecipesComponent,
-    RecipeCardComponent 
+    RecipeCardComponent,
+    IngredientsComponent 
 
   ],
   imports: [

@@ -21,6 +21,6 @@ export class RecipesService {
   }
 
   getRecipesByCategory(id:number){
-    return this.http.get<Recipe[]>(this.baseUrl+'recipes/GetRecipeByCategory/'+id);
+    return this.http.get<Recipe[]>(this.baseUrl+'recipes/getrecipebycategory/'+id);
   }
 }

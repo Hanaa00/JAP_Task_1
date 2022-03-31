@@ -14,18 +14,22 @@ namespace API.Controllers
             _context = context;
         }
 
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipes()
+        public async Task<IActionResult> GetRecipes()
         {
-            return await _context.Recipe.ToListAsync();
-            
+            return Ok(await _context.Recipe.ToListAsync());
         }
 
         [HttpGet("{RecipeId}")]
-        public async Task<ActionResult<Recipe>> GetRecipe(int RecipeId)
+        public async Task<IActionResult> GetRecipe(int RecipeId)
         {
-            return await _context.Recipe.FindAsync(RecipeId);
+            var recipe = await _context.Recipe
+                .Include(x => x.Category)
+                .Include(x => x.RecipeDetailsList)
+                    .ThenInclude(x => x.Ingredient)
+                .FirstOrDefaultAsync(x=> x.Id == RecipeId);
+
+            return Ok(recipe);
         }
 
         [HttpGet]
@@ -44,6 +48,7 @@ namespace API.Controllers
 
         // }
 
+        //EXCEPTION MIDDLEWARE
 
 
 

@@ -1,3 +1,4 @@
+import { Identifiers } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/_models/category';
@@ -10,15 +11,18 @@ import { CategoriesService } from 'src/app/_services/categories.service';
 })
 export class CategoryDetailComponent implements OnInit {
   category: Category;
+  id;
 
-  constructor(private categoryService: CategoriesService, private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.loadCategory();
+  constructor(private categoryService: CategoriesService, private route: ActivatedRoute) {
+    this.id = this.route.snapshot.paramMap.get('id') as unknown as number;
   }
 
-  loadCategory(){
-    this.categoryService.getCategory(this.route.snapshot.paramMap.get('id') as unknown as number).subscribe(category=>{
+  ngOnInit(): void {
+    this.loadCategory(this.id);
+  }
+
+  loadCategory(id){
+    this.categoryService.getCategory(id).subscribe(category=>{
       this.category=category;
     })
   }

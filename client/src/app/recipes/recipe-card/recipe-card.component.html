@@ -1,3 +1,4 @@
+
 <div class="card mb-4">
     <div class="card-img-wrapper">
         <img src="{{recipe.recipePhoto}}" class="card-img-top">
@@ -10,7 +11,7 @@
         <br>
         <div class="text-center">
             <!-- <button type="button" routerLink='/categories/{{category.categoryId}}' class="btn btn-warning mb-1" style="height:30;width:70;background-color:darkgreen;font-style: italic;border-style: none;">View more</button> -->
-            <button>View details</button>
+            <button class="btn btn-primary mb-1" routerLink="/recipes/getrecipebycategory/{{category.categoryId}}/{{recipe.recipeId}}" style="height:30;width:70;background-color:darkgreen;font-style: italic;border-style: none;">View details</button>
         </div>
     </div>
 </div>
