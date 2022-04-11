@@ -27,7 +27,6 @@ namespace API.Controllers
 
        
         [HttpGet("{CategoryId}")]
-      
         public async Task<ActionResult<Category>> GetCategory(int categoryId)
         {
             if (categoryId < 1)

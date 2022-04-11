@@ -19,19 +19,19 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipesService, private route: ActivatedRoute, private categoryService: CategoriesService) { }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('user'));
     this.loadCategory();
     this.loadRecipes();
   }
 
   loadCategory(){
-    this.categoryService.getCategory(this.route.snapshot.paramMap.get('id') as unknown as number).subscribe(category=>{
+    let id = this.route.snapshot.paramMap.get('categoryId') as unknown as number;
+    this.categoryService.getCategory(id).subscribe(category=>{
       this.category=category;
     })
   }
   
   loadRecipes() {
-    let id = this.route.snapshot.paramMap.get('id') as unknown as number;
+    let id = this.route.snapshot.paramMap.get('categoryId') as unknown as number;
     this.recipeService.getRecipesByCategory(id).subscribe(recipes => {
       this.recipes = recipes;
     })

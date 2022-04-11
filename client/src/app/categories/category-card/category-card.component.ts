@@ -12,6 +12,7 @@ export class CategoryCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.category);
   }
 
 }

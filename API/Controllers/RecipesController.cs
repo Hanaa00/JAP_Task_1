@@ -1,5 +1,7 @@
 using API.Data;
 using API.Entities;
+using API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,33 +11,47 @@ namespace API.Controllers
     public class RecipesController : BaseApiController
     {
         private readonly DataContext _context;
-        public RecipesController(DataContext context)
+        private readonly IRecipeService _recipeService;
+        public RecipesController(DataContext context, IRecipeService recipeService)
         {
+            _recipeService = recipeService;
             _context = context;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetRecipes()
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipes()
         {
-            return Ok(await _context.Recipe.ToListAsync());
+            var recipes = await _recipeService.GetRecipes();
+
+            return Ok(recipes);
+
+            // return Ok(await _context.Recipe.ToListAsync());
         }
 
         [HttpGet("{RecipeId}")]
-        public async Task<IActionResult> GetRecipe(int RecipeId)
+        public async Task<ActionResult<Recipe>> GetRecipe(int recipeId)
         {
-            var recipe = await _context.Recipe
-                .Include(x => x.Category)
-                .Include(x => x.RecipeDetailsList)
-                    .ThenInclude(x => x.Ingredient)
-                .FirstOrDefaultAsync(x=> x.Id == RecipeId);
+           
+               if (recipeId < 1)
+                return BadRequest();
+            
+            return await _context.Recipe.FindAsync(recipeId);
 
-            return Ok(recipe);
+            // .Include(x => x.Category)
+            // .Include(x => x.RecipeDetailsList)
+            //     .ThenInclude(x => x.Ingredient)
+            // .FirstOrDefaultAsync(x=> x.Id == RecipeId);
+
+            // // return Ok(recipe);
+
         }
 
         [HttpGet]
-        [Route ("getrecipebycategory/{categoryId}")]
-        public async Task<List<Recipe>> GetRecipeByCategory(int categoryId) {
-              return await _context.Recipe.Where(u => u.CategoryId == categoryId).ToListAsync();
+        [Route("getrecipebycategory/{categoryId}")]
+        public async Task<List<Recipe>> GetRecipeByCategory(int categoryId)
+        {
+            return await _context.Recipe.Where(u => u.CategoryId == categoryId).ToListAsync();
         }
         // public async Task<List<Recipe>> (int id)
         // {

@@ -9,7 +9,7 @@ namespace API.Entities
         public float Quantity { get; set; }
         public MeasureUnitEnum MesureUnit { get; set; }
 
-        public int IngredientsId { get; set; }
+        public int IngredientId { get; set; }
         public Ingredient Ingredient { get; set; }
 
         public int RecipeId { get; set; }

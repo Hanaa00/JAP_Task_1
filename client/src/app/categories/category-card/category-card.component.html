@@ -1,18 +1,15 @@
 <div class="card mb-4">
     <div class="card-img-wrapper">
-        <img src="{{category.categoryPhoto}}" class="card-img-top">
+       <img src="{{category.categoryPhoto}}" style="width:160px;height:170px;"class="card-img-top">
     </div>
     <div class="card-body p-1">
-        <h6 class="card-title text-center mb-1">
-            {{category.categoryName}}
-        </h6>
-        <br>
-        <br>
-        <div class="text-center">
+        <p class="card-title text-center mb-1" style="font-style:normal;font-size: 20px;"><b>{{category.categoryName}}</b></p>
+
+        <div class="button">
             <button 
             class="btn btn-primary mb-1" 
-            routerLink='/recipes/getrecipebycategory/{{category.categoryId}}' 
+            [routerLink] = "['/categories', category.id]" 
             style="height:30;width:70;background-color:darkgreen;font-style: italic;border-style: none;">View more</button>
-        </div>
+        </div> 
     </div>
 </div>

@@ -1,17 +1,12 @@
-
 <div class="card mb-4">
     <div class="card-img-wrapper">
-        <img src="{{recipe.recipePhoto}}" class="card-img-top">
+        <img src="{{recipe.recipePhoto}}" style="width:160px;height:170px;"class="card-img-top">
     </div>
     <div class="card-body p-1">
-        <h6 class="card-title text-center mb-1">
-            {{recipe.recipeName}}
-        </h6>
-        <br>
-        <br>
-        <div class="text-center">
-            <!-- <button type="button" routerLink='/categories/{{category.categoryId}}' class="btn btn-warning mb-1" style="height:30;width:70;background-color:darkgreen;font-style: italic;border-style: none;">View more</button> -->
-            <button class="btn btn-primary mb-1" routerLink="/recipes/getrecipebycategory/{{category.categoryId}}/{{recipe.recipeId}}" style="height:30;width:70;background-color:darkgreen;font-style: italic;border-style: none;">View details</button>
+        <p class="card-title text-center mb-1" style="font-style:normal;font-size: 20px;"><b>{{recipe.recipeName}}</b></p>
+       
+        <div class="button">
+            <button class="btn btn-primary mb-1" *ngIf="category recipe" routerLink="/categories/{{category.id}}/{{recipe.id}}" style="height:30;width:70;background-color:darkgreen;font-style: italic;">View details</button>
         </div>
     </div>
 </div>

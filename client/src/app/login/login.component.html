@@ -1,9 +1,8 @@
 <body class="text-center">
     <div class="container">
         <!--*ngIf="accountService.currentUser$ | async">-->
-        <main class="form-signin">
-            <!-- <h2 class="mt-5"><span style="color:green">Welcome to</span></h2> -->
-            <h1 class="mt-5"><span style="color:green">Tasty</span></h1>
+        <main class="form-signin" style="background-color: rgb(206, 202, 202);">
+            <h1 class="mt-5"><span style="color:green;margin-right:125px;margin-left:125px;">Tasty</span></h1>
 
           <nav class="navbar navbar-dark fixed-top bg-dark" *ngIf="(accountService.currentUser$ | async) as user">
                 <div class="dropdown" dropdown>
@@ -21,11 +20,11 @@
             <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" (ngSubmit)="login()"
                 autocomplete="off">
                 <div class="container">
-                    <input name="username" [(ngModel)]="model.username" class="form-control text-center" type="text"
-                        placeholder="Please enter your username">
+                    <input name="username" [(ngModel)]="model.username" class="form-control" type="text" 
+                        placeholder="Please enter your username" style="text-align:center;height:50px;width:400px;">
                     <br>
-                    <input name="password" [(ngModel)]="model.password" class="form-control text-center" type="password"
-                        placeholder="Please enter your password">
+                    <input name="password" [(ngModel)]="model.password" class="form-control" type="password"
+                        placeholder="Please enter your password" style="text-align:center;height:50px;width:400px;">
                     <br>
                     <input name="remember" type="checkbox"> Remember me
                     <br>

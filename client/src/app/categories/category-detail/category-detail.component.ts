@@ -11,10 +11,10 @@ import { CategoriesService } from 'src/app/_services/categories.service';
 })
 export class CategoryDetailComponent implements OnInit {
   category: Category;
-  id;
+  id:number;
 
   constructor(private categoryService: CategoriesService, private route: ActivatedRoute) {
-    this.id = this.route.snapshot.paramMap.get('id') as unknown as number;
+    this.id = this.route.snapshot.paramMap.get('categoryId') as unknown as number;
   }
 
   ngOnInit(): void {
@@ -26,6 +26,4 @@ export class CategoryDetailComponent implements OnInit {
       this.category=category;
     })
   }
-
-
 }

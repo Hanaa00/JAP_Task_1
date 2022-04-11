@@ -21,16 +21,11 @@ const routes: Routes = [
     children:[
       {path:'members',component:MemberListComponent,canActivate:[AuthGuard]},
       {path:'categories',component:CategoryListComponent,canActivate:[AuthGuard]},
+      {path:'categories/:categoryId',component:CategoryDetailComponent},
+      {path:'categories/:categoryId/:recipeId',component:IngredientsComponent},
       {path:'recipes',component:RecipesComponent},
-      {path:'categories/:id',component:CategoryDetailComponent},
-      {path:'recipes/:categoryId',component:CategoryDetailComponent},
-      {path:'recipes/:id',component:CategoryDetailComponent},
-      {path:'recipes/edit/:id',component:CategoryDetailComponent},
-      {path:'recipes/add',component:CategoryDetailComponent},
-      {path:'recipes/:categoryId/:recipeId',component:IngredientsComponent},
-      
 
-      //{path:'categories/:id', component:RecipeCardComponent},
+      
       {path:'lists',component:ListsComponent},
       {path:'messages',component:MessagesComponent},
     ]

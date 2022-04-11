@@ -1,0 +1,9 @@
+table{
+    border: 2px solid black;
+    float: right;
+}
+
+.all{
+    position:relative;
+    margin-top: -8%;
+}

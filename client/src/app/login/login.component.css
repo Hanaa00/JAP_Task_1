@@ -1,3 +1,10 @@
 .dropdown-toggle, .dropdown-item{
     cursor:pointer;
 }
+
+.form-control{
+    margin-left:340px;
+    margin-right:65px;
+    text-align: center;
+}
+

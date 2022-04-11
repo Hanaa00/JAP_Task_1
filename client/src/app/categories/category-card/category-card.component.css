@@ -9,9 +9,26 @@
     transform: scale(1.0,1.0);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
+  
 
 }
 
 .card-img-wrapper{
     overflow: hidden;
+    
+}
+
+.card{
+    height: 180px;
+    background-color: rgb(219, 217, 217);
+    border-color: green;
+    border-style:double;
+    
+}
+
+.button{
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+
 }

@@ -1,10 +1,23 @@
+<div class="all">
+    <button class="btn btn-primary" onclick="history.back()"
+        style="height:33px;width:70px;background-color:green;font-style: italic;border-style: none;">BACK</button>
+    <h1 *ngIf="recipe">{{recipe.recipeName}}</h1>
 
-<h1 *ngIf="recipe">{{recipe.recipeName}}</h1>
-<div class="picture">
-    <picture>
+    <div class="directions">
 
-    </picture>
-</div>
-<div class="directions">
-    <textarea style="height:70;width:50">Ovdje ce doci directions</textarea>
+        <textarea style="height:300px;width:400px">Ovdje ce doci directions</textarea>
+            <table>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Ingredients</th>
+                    <th>Ingredients</th>
+                </tr>
+                <tr>
+                    <td> nesto </td>
+                    <td> nesto </td>
+                    <td> nesto </td>
+                </tr>
+            </table>
+        </div>
+    
 </div>
